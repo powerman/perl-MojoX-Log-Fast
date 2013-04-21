@@ -3,17 +3,17 @@ require 5.010000;
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
-  'PL_FILES' => {},
-  'INSTALLDIRS' => 'site',
   'NAME' => 'MojoX::Log::Fast',
-  'EXE_FILES' => [],
   'VERSION_FROM' => 'lib/MojoX/Log/Fast.pm',
   'PREREQ_PM' => {
-                   'Test::More' => 0,
-                   'Test::Exception' => 0,
-                   'version' => '0.77',
                    'Log::Fast' => 0,
-                   'Mojolicious' => 0
-                 }
+                   'Mojolicious' => 0,
+                   'Test::Exception' => 0,
+                   'Test::More' => 0,
+                   'version' => '0.77'
+                 },
+  'INSTALLDIRS' => 'site',
+  'EXE_FILES' => [],
+  'PL_FILES' => {}
 )
 ;

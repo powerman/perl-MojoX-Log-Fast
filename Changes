@@ -1,5 +1,9 @@
 Revision history for MojoX-Log-Fast
 
+0.1.1	Sun Apr 21 15:53:40 EEST 2013
+	Remove "v" from version in .tar.gz.
+	Fix compatibility with 5.10.1.
+
 0.1.0	Thu Apr 11 15:26:57 EEST 2013
 	Initial release.
 

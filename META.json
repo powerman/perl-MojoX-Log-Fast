@@ -44,7 +44,7 @@
    "provides" : {
       "MojoX::Log::Fast" : {
          "file" : "lib/MojoX/Log/Fast.pm",
-         "version" : "v0.1.0"
+         "version" : "v0.1.1"
       }
    },
    "release_status" : "stable",
@@ -53,5 +53,5 @@
          "http://www.opensource.org/licenses/mit-license.php"
       ]
    },
-   "version" : "v0.1.0"
+   "version" : "v0.1.1"
 }

@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Carp 'croak';
 
-use version; our $VERSION = qv('0.1.0');    # REMINDER: update Changes
+use version; our $VERSION = qv('0.1.1');    # REMINDER: update Changes
 
 # REMINDER: update dependencies in Build.PL
 use Mojo::Base 'Mojo::Log';
@@ -53,11 +53,10 @@ sub level {
 sub _message {
     my ($self, $level, @lines) = @_;
     given ($level) {
-        ## no critic(ProhibitPostfixControls)
-        $self->{'_logger'}->DEBUG(join "\n", @lines)  when q{debug};
-        $self->{'_logger'}->INFO(join "\n", @lines)   when q{info};
-        $self->{'_logger'}->WARN(join "\n", @lines)   when q{warn};
-        $self->{'_logger'}->ERR(join "\n", @lines);   # error, fatal
+        when (q{debug}) { $self->{'_logger'}->DEBUG(join "\n", @lines) }
+        when (q{info})  { $self->{'_logger'}->INFO(join "\n", @lines)  }
+        when (q{warn})  { $self->{'_logger'}->WARN(join "\n", @lines)  }
+        default         { $self->{'_logger'}->ERR(join "\n", @lines)   } # error, fatal
     }
     return;
 }
