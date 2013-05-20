@@ -8,7 +8,7 @@ build_requires:
 configure_requires:
   Module::Build: 0
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Module::Build version 0.4005, CPAN::Meta::Converter version 2.120921'
 license: mit
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -17,7 +17,7 @@ name: MojoX-Log-Fast
 provides:
   MojoX::Log::Fast:
     file: lib/MojoX/Log/Fast.pm
-    version: v0.1.1
+    version: v0.1.2
 recommends:
   Pod::Coverage: 0.18
   Test::CheckManifest: 0.9
@@ -27,8 +27,8 @@ recommends:
 requires:
   Log::Fast: 0
   Mojolicious: 0
-  perl: v5.10.0
+  perl: 5.01
   version: 0.77
 resources:
   license: http://www.opensource.org/licenses/mit-license.php
-version: v0.1.1
+version: v0.1.2

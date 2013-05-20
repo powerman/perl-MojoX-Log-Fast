@@ -1,5 +1,8 @@
 Revision history for MojoX-Log-Fast
 
+0.1.2   Mon May 20 19:28:43 EEST 2013
+	Improve compatibility with CPAN Testers.
+
 0.1.1	Sun Apr 21 15:53:40 EEST 2013
 	Remove "v" from version in .tar.gz.
 	Fix compatibility with 5.10.1.

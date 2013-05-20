@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Carp 'croak';
 
-use version; our $VERSION = qv('0.1.1');    # REMINDER: update Changes
+use version; our $VERSION = qv('0.1.2');    # REMINDER: update Changes
 
 # REMINDER: update dependencies in Build.PL
 use Mojo::Base 'Mojo::Log';

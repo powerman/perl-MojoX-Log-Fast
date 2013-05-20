@@ -4,7 +4,7 @@
       "Alex Efros <powerman@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Module::Build version 0.4005, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "mit"
    ],
@@ -36,7 +36,7 @@
          "requires" : {
             "Log::Fast" : "0",
             "Mojolicious" : "0",
-            "perl" : "v5.10.0",
+            "perl" : "5.01",
             "version" : "0.77"
          }
       }
@@ -44,7 +44,7 @@
    "provides" : {
       "MojoX::Log::Fast" : {
          "file" : "lib/MojoX/Log/Fast.pm",
-         "version" : "v0.1.1"
+         "version" : "v0.1.2"
       }
    },
    "release_status" : "stable",
@@ -53,5 +53,5 @@
          "http://www.opensource.org/licenses/mit-license.php"
       ]
    },
-   "version" : "v0.1.1"
+   "version" : "v0.1.2"
 }
