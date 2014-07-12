@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Carp 'croak';
 
-use version; our $VERSION = qv('0.1.2');    # REMINDER: update Changes
+use version; our $VERSION = qv('0.1.3');    # REMINDER: update Changes
 
 # REMINDER: update dependencies in Build.PL
 use Mojo::Base 'Mojo::Log';
@@ -32,7 +32,6 @@ sub new {
     return $self;
 }
 
-## no critic(RequireArgUnpacking)
 sub config  { return shift->{'_logger'}->config(@_); }
 sub ident   { return shift->{'_logger'}->ident(@_); }
 
@@ -52,11 +51,14 @@ sub level {
 
 sub _message {
     my ($self, $level, @lines) = @_;
-    given ($level) {
-        when (q{debug}) { $self->{'_logger'}->DEBUG(join "\n", @lines) }
-        when (q{info})  { $self->{'_logger'}->INFO(join "\n", @lines)  }
-        when (q{warn})  { $self->{'_logger'}->WARN(join "\n", @lines)  }
-        default         { $self->{'_logger'}->ERR(join "\n", @lines)   } # error, fatal
+    if ($level eq 'debug') {
+        $self->{'_logger'}->DEBUG(join "\n", @lines);
+    } elsif ($level eq 'info') {
+        $self->{'_logger'}->INFO(join "\n", @lines);
+    } elsif ($level eq 'warn') {
+        $self->{'_logger'}->WARN(join "\n", @lines);
+    } else { # error, fatal
+        $self->{'_logger'}->ERR(join "\n", @lines);
     }
     return;
 }
@@ -168,7 +170,7 @@ Alex Efros  C<< <powerman@cpan.org> >>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2013 Alex Efros <powerman@cpan.org>.
+Copyright 2013-2014 Alex Efros <powerman@cpan.org>.
 
 This program is distributed under the MIT (X11) License:
 L<http://www.opensource.org/licenses/mit-license.php>
