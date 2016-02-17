@@ -1,0 +1,7 @@
+/MojoX-Log-Fast-*
+/.build
+/_build*
+/Build
+MYMETA.*
+!META.json
+/.prove
