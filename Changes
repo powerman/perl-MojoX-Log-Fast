@@ -1,6 +1,8 @@
 Revision history for MojoX-Log-Fast
 
 {{$NEXT}}
+
+v1.0.0  2016-02-17 23:41:22 EET
 	- Switch to Dist::Milla.
 
 0.1.4   2015-04-14 11:02:33 EEST

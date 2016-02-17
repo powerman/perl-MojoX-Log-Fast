@@ -54,7 +54,7 @@
    "provides" : {
       "MojoX::Log::Fast" : {
          "file" : "lib/MojoX/Log/Fast.pm",
-         "version" : "v0.1.4"
+         "version" : "v1.0.0"
       }
    },
    "release_status" : "stable",
@@ -69,6 +69,6 @@
          "web" : "https://github.com/powerman/perl-MojoX-Log-Fast"
       }
    },
-   "version" : "v0.1.4"
+   "version" : "v1.0.0"
 }
 

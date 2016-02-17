@@ -7,7 +7,7 @@ MojoX::Log::Fast - Log::Fast for Mojolicious
 
 # VERSION
 
-This document describes MojoX::Log::Fast version v0.1.4
+This document describes MojoX::Log::Fast version v1.0.0
 
 # SYNOPSIS
 
