@@ -34,26 +34,34 @@ that log level.
 
 # INTERFACE 
 
-- new( \[$logfast\] )
+## new
 
-    If Log::Fast instance $logfast doesn't provided then Log::Fast->global()
-    will be used by default.
+        $log = MojoX::Log::Fast->new();
+        $log = MojoX::Log::Fast->new( $logfast );
 
-- config( @params )
-- ident( @params )
+If Log::Fast instance $logfast doesn't provided then Log::Fast->global()
+will be used by default.
 
-    Proxy these methods with given @params to Log::Fast instance.
+## config
 
-- handle()
-- path()
+## ident
 
-    Not compatible with Log::Fast and thus not supported.
+        $log->config( @params );
+        $log->ident( @params );
 
-- format()
+Proxy these methods with given @params to Log::Fast instance.
 
-    Not implemented yet, use much more flexible config() instead.
+## handle
 
-    Let me know if anyone need it.
+## path
+
+Not compatible with Log::Fast and thus not supported.
+
+## format
+
+Not implemented yet, use much more flexible config() instead.
+
+Let me know if you needs it.
 
 # SUPPORT
 
@@ -101,7 +109,7 @@ Alex Efros &lt;powerman@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2013-2015 by Alex Efros &lt;powerman@cpan.org>.
+This software is Copyright (c) 2013- by Alex Efros &lt;powerman@cpan.org>.
 
 This is free software, licensed under:
 

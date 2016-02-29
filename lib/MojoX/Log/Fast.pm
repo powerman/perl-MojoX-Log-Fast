@@ -104,32 +104,34 @@ that log level.
 
 =head1 INTERFACE 
 
-=over
+=head2 new
 
-=item new( [$logfast] )
+        $log = MojoX::Log::Fast->new();
+        $log = MojoX::Log::Fast->new( $logfast );
 
 If Log::Fast instance $logfast doesn't provided then Log::Fast->global()
 will be used by default.
 
-=item config( @params )
+=head2 config
 
-=item ident( @params )
+=head2 ident
+
+        $log->config( @params );
+        $log->ident( @params );
 
 Proxy these methods with given @params to Log::Fast instance.
 
-=item handle()
+=head2 handle
 
-=item path()
+=head2 path
 
 Not compatible with Log::Fast and thus not supported.
 
-=item format()
+=head2 format
 
 Not implemented yet, use much more flexible config() instead.
 
-Let me know if anyone need it.
-
-=back
+Let me know if you needs it.
 
 
 =head1 SUPPORT
@@ -184,7 +186,7 @@ Alex Efros E<lt>powerman@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2013-2015 by Alex Efros E<lt>powerman@cpan.orgE<gt>.
+This software is Copyright (c) 2013- by Alex Efros E<lt>powerman@cpan.orgE<gt>.
 
 This is free software, licensed under:
 
