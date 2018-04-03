@@ -3,7 +3,7 @@ package MojoX::Log::Fast;
 use Mojo::Base 'Mojo::Log';
 use Carp 'croak';
 
-our $VERSION = 'v1.0.0';
+our $VERSION = 'v1.0.1';
 
 use Log::Fast;
 
@@ -74,7 +74,7 @@ MojoX::Log::Fast - Log::Fast for Mojolicious
 
 =head1 VERSION
 
-This document describes MojoX::Log::Fast version v1.0.0
+This document describes MojoX::Log::Fast version v1.0.1
 
 
 =head1 SYNOPSIS
