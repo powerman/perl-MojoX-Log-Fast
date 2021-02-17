@@ -7,7 +7,7 @@ MojoX::Log::Fast - Log::Fast for Mojolicious
 
 # VERSION
 
-This document describes MojoX::Log::Fast version v1.0.1
+This document describes MojoX::Log::Fast version v1.1.0
 
 # SYNOPSIS
 
@@ -41,6 +41,19 @@ that log level.
 
 If Log::Fast instance $logfast doesn't provided then Log::Fast->global()
 will be used by default.
+
+## context
+
+        my $new = $log->context('[extra] [information]');
+
+Construct a new child [Mojo::Log::Fast](https://metacpan.org/pod/Mojo::Log::Fast) object that will include context information
+with every log message.
+
+        # Log with context
+        my $log = Mojo::Log::Fast->new;
+        my $context = $log->context('[17a60115]');
+        $context->debug('This is a log message with context information');
+        $context->info('And another');
 
 ## config
 
