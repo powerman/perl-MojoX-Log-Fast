@@ -3,7 +3,7 @@ package MojoX::Log::Fast;
 use Mojo::Base 'Mojo::Log';
 use Carp 'croak';
 
-our $VERSION = 'v1.0.1';
+our $VERSION = 'v1.1.0';
 
 use Log::Fast;
 
@@ -31,6 +31,14 @@ sub new {
     return $self;
 }
 
+sub context {
+    my ($parent, $str) = @_;
+    my $self = $parent->new();
+    $self->level($parent->level);
+    $self->{'context'} = $str;
+    return $self;
+}
+
 sub config  { return shift->{'_logger'}->config(@_); }
 sub ident   { return shift->{'_logger'}->ident(@_); }
 
@@ -50,6 +58,9 @@ sub level {
 
 sub _message {
     my ($self, $level, @lines) = @_;
+    if ($self->{'context'}) {
+        $lines[0] = "$self->{context} $lines[0]";
+    }
     if ($level eq 'debug') {
         $self->{'_logger'}->DEBUG(join "\n", @lines);
     } elsif ($level eq 'info') {
@@ -111,6 +122,19 @@ that log level.
 
 If Log::Fast instance $logfast doesn't provided then Log::Fast->global()
 will be used by default.
+
+=head2 context
+
+        my $new = $log->context('[extra] [information]');
+
+Construct a new child L<Mojo::Log::Fast> object that will include context information
+with every log message.
+
+        # Log with context
+        my $log = Mojo::Log::Fast->new;
+        my $context = $log->context('[17a60115]');
+        $context->debug('This is a log message with context information');
+        $context->info('And another');
 
 =head2 config
 
