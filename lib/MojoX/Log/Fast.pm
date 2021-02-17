@@ -3,7 +3,7 @@ package MojoX::Log::Fast;
 use Mojo::Base 'Mojo::Log';
 use Carp 'croak';
 
-our $VERSION = 'v1.1.0';
+our $VERSION = 'v1.2.0';
 
 use Log::Fast;
 
@@ -32,10 +32,10 @@ sub new {
 }
 
 sub context {
-    my ($parent, $str) = @_;
+    my ($parent, @context) = @_;
     my $self = $parent->new();
     $self->level($parent->level);
-    $self->{'context'} = $str;
+    $self->{'context'} = \@context;
     return $self;
 }
 
@@ -59,16 +59,16 @@ sub level {
 sub _message {
     my ($self, $level, @lines) = @_;
     if ($self->{'context'}) {
-        $lines[0] = "$self->{context} $lines[0]";
+        unshift @lines, @{$self->{context}}
     }
     if ($level eq 'debug') {
-        $self->{'_logger'}->DEBUG(join "\n", @lines);
+        $self->{'_logger'}->DEBUG(join q{ }, @lines);
     } elsif ($level eq 'info') {
-        $self->{'_logger'}->INFO(join "\n", @lines);
+        $self->{'_logger'}->INFO(join q{ }, @lines);
     } elsif ($level eq 'warn') {
-        $self->{'_logger'}->WARN(join "\n", @lines);
+        $self->{'_logger'}->WARN(join q{ }, @lines);
     } else { # error, fatal
-        $self->{'_logger'}->ERR(join "\n", @lines);
+        $self->{'_logger'}->ERR(join q{ }, @lines);
     }
     return;
 }
